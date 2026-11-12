@@ -1,0 +1,5 @@
+.quote {
+    padding: 32px;
+    background-color: var(--color-wash);
+    border-radius: 24px;
+}

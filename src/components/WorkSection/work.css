@@ -1,0 +1,80 @@
+/* Cards stack: each one sticks a little lower than the last, so the next slides over it */
+.card {
+    position: sticky;
+    top: calc(96px + var(--i) * 22px);
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--color-wash);
+    border: 1px solid var(--color-line);
+    border-radius: 28px;
+    box-shadow: 0 -12px 40px rgba(21, 20, 40, 0.1);
+    transform: scale(var(--s, 1));
+    transform-origin: top center;
+    will-change: transform;
+}
+
+.card-media {
+    display: grid;
+    place-items: center;
+    height: 420px;
+    padding: 28px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+/* The flyer settles onto the card when it scrolls in, then straightens on hover */
+.card-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 18px 40px rgba(21, 20, 40, 0.2);
+    opacity: 0;
+    transform: rotate(calc(var(--tilt) * 2.5)) scale(0.9);
+    transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease-out;
+}
+
+.card.in .card-img {
+    opacity: 1;
+    transform: rotate(var(--tilt));
+}
+
+.card.in:hover .card-img {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.chip {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ---- Mobile Responsiveness ----- */
+
+@media (max-width: 768px) {
+    .card-media {
+        height: 280px;
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        position: relative;
+        top: auto;
+        transform: none;
+    }
+
+    .card-img, .card.in .card-img, .card.in:hover .card-img {
+        opacity: 1;
+        transform: rotate(var(--tilt));
+        transition: none;
+    }
+}

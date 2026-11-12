@@ -1,0 +1,29 @@
+.avatar {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.link-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background-color: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.link-pill:hover {
+    background-color: var(--color-yellow);
+    border-color: var(--color-ink);
+}

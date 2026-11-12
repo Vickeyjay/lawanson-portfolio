@@ -1,0 +1,44 @@
+.foot-card {
+    background-color: var(--color-ink);
+    border-radius: 40px;
+    color: #fff;
+}
+
+.foot-dot {
+    position: absolute;
+    top: 22px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.foot-dot-l { left: 24px; background-color: var(--color-magenta); }
+.foot-dot-r { right: 24px; background-color: var(--color-cyan); }
+
+.foot-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+
+.foot-link:hover {
+    color: var(--color-yellow);
+}
+
+/* Giant wordmark, fading out and cropped by the card edge */
+.wordmark {
+    margin: 56px 0 -0.14em;
+    background: linear-gradient(#fff 20%, rgba(255, 255, 255, 0.04));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 21vw, 19rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.78;
+    text-align: center;
+    user-select: none;
+}

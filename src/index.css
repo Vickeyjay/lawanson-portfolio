@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+/* ---- Design tokens (also Tailwind classes: text-magenta, bg-wash, font-display...) ----- */
+@theme static {
+    --color-ink: #151428;
+    --color-muted: #5d5b73;
+    --color-line: #e4e2ee;
+    --color-wash: #f4f4f8;
+    --color-magenta: #d6006f;
+    --color-cyan: #00a6e6;
+    --color-yellow: #ffd400;
+    --font-display: 'Gabarito', system-ui, sans-serif;
+    --font-body: 'Newsreader', Georgia, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    padding-bottom: 96px;
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.65;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 3px;
+}
+
+/* ---- Shared pieces ----- */
+
+.section {
+    padding: 96px 0;
+}
+
+.section-title {
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+}
+
+.section-sub {
+    max-width: 52ch;
+    margin-bottom: 44px;
+    color: var(--color-muted);
+}
+
+/* Pill buttons with an arrow circle */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 8px 8px 26px;
+    background: var(--color-ink);
+    border-radius: 999px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.pill:hover {
+    background: var(--color-magenta);
+    transform: translateY(-2px);
+}
+
+.pill-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    color: var(--color-ink);
+    font-size: 1.1rem;
+}
+
+.pill-light {
+    background: #fff;
+    color: var(--color-ink);
+}
+
+.pill-light .pill-icon {
+    background: var(--color-ink);
+    color: #fff;
+}
+
+.pill-light:hover {
+    background: var(--color-yellow);
+}
+
+.pill-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.pill-ghost:hover {
+    background: var(--color-wash);
+    border-color: var(--color-ink);
+}
+
+/* Dashed box used wherever an image still needs to be added */
+.ph {
+    display: grid;
+    place-items: center;
+    min-height: 220px;
+    padding: 16px;
+    text-align: center;
+    background: repeating-linear-gradient(45deg, var(--color-wash) 0 10px, #eceaf5 10px 20px);
+    border: 1px dashed #b9b5d6;
+    color: var(--color-muted);
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
